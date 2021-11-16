@@ -20,7 +20,7 @@ class AddData : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_add_data, container, false)
     }
 
@@ -47,17 +47,7 @@ class AddData : Fragment() {
     }
 
     private fun addDataInRoomDB() {
-        /*val roomDatabaseBuilder = context?.let { DatabaseBuilder.getInstance(it) }
-          Executors.newSingleThreadExecutor().execute {
-              roomDatabaseBuilder!!.personDao().insertPersonDetails(
-                  PersonDataClass(
-                      personId = null,
-                      personName = personName_ET.text.toString(),
-                      personContact = personContact_ET.text.toString(),
-                      personAddress = personAddress_ET.text.toString()
-                  )
-              )
-          }*/
+
 
         val application = activity!!.application
         val personViewModel = ViewModelProvider(this).get(ViewModelclass(application)::class.java)

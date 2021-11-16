@@ -52,38 +52,21 @@ class ShowData : Fragment() {
     }
 
     private fun setupListFromRoom() {
-        // With LiveData
+
         val application = activity!!.application
         val personViewModel = ViewModelProvider(this).get(ViewModelclass(application)::class.java)
 
         personViewModel.allPersons.observe(viewLifecycleOwner, Observer {
-            //Log.i(TAG, it.toString())
+
             personList = it as ArrayList<DataClass>
             customAdapter = CustomAdapter(context!!, personList)
             personDetails_RV.adapter = customAdapter
             customAdapter.notifyDataSetChanged()
         })
 
-        // Without LiveData
-        /* val roomDatabaseBuilder = context?.let { DatabaseBuilder.getInstance(it) }
-         var personsList: List<PersonDataClass>
-         Executors.newSingleThreadExecutor().execute {
-             // get data from Database
-             personsList = roomDatabaseBuilder!!.personDao().getAllPersonsDetails()
-             personDetails_RV.apply {
-                 activity!!.runOnUiThread {
-                     customAdapter = PersonDetailAdapter(context, personsList as ArrayList<PersonDataClass>)
-                     personDetails_RV.adapter = customAdapter
-                     customAdapter.notifyDataSetChanged()
-                 }
-             }
-         }*/
+
     }
 
-    /**
-     * Replace old fragment with another fragment
-     * to add the new person details
-     */
     private fun openAddPersonDetailsFragment() {
         val fragmentManager = fragmentManager
         val fragmentTransaction = fragmentManager?.beginTransaction()

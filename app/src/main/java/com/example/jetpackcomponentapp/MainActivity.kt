@@ -20,9 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        // get last updated value
-        // So that in case of configuration change
-        // Last value is get used
+
         mainActivity_CL.setBackgroundColor(colorViewModel.selectedColor)
     }
 

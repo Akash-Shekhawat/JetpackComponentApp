@@ -16,14 +16,14 @@ class ColorViewModel : ViewModel() {
         Color.MAGENTA
     )
 
-    // Assigning a default color
+
     var selectedColor = colorArray[0]
 
     fun changeBackgroundColor() {
         selectedColor = colorArray[randomNumberGenerator()]
     }
 
-    // Generate random number
+
     private fun randomNumberGenerator(): Int {
         val startRange = 0
         val endRange = colorArray.size

@@ -12,7 +12,7 @@ class LiveDataDemo : AppCompatActivity() {
         addFragmentToView()
     }
     private fun addFragmentToView() {
-        // Add fragment to view at runtime
+
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.add(R.id.fragmentContainer_FL, ShowData())
